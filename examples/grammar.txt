@@ -1,0 +1,23 @@
+// 2eme exemple : plusieurs tuiles
+
+grammar UBlock
+
+entry Game: "Red:" redPlayer=STRING "Green:" greenPlayer=STRING (actions+=Action)+;
+
+// une seule action : placer une pièce
+Action: tuile=Tuile 'at' dest=Case;
+
+// simplification pour commencer : le plateau avec un taille définie : 8x8
+// amélioration : variabilité de la taille du plateau
+terminal Case: /[a-h][1-8]/; 
+
+Tuile returns string:'tuile';
+
+// fin de parties : un joueur est bloqué OU plateau rempli
+
+hidden terminal WS: /\s+/;
+terminal ID: /[_a-zA-Z][\w_]*/;
+terminal STRING: /"[^"]*"/;
+
+hidden terminal ML_COMMENT: /\/\*[\s\S]*?\*\//;
+hidden terminal SL_COMMENT: /\/\/[^\n\r]*/;
