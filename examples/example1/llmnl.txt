@@ -1,0 +1,1 @@
+Deux joueurs, dénomés "Red" et "Green", s'opposent sur un plateau de forme carré et de taille 8x8. Le but est de bloquer son adversaire en posant des tuiles représentées chacune par des carrés de 1x1. "Red" commence par poser une tuile puis c'est le tour de "Green".
